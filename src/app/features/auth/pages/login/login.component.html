@@ -1,0 +1,42 @@
+<div class="h-dvh w-dvw flex">
+  <div class="basis-1/2 flex justify-center items-center bg-white">
+    <div class="w-[360px] flex flex-col gap-8">
+      <div>
+        <h1 class="text-4xl font-bold">Đăng nhập tài khoản của bạn</h1>
+        <span>Chào mừng quay trở lại!</span>
+      </div>
+
+      <form
+        class="flex flex-col gap-4"
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="flex flex-col gap-1">
+          <label for="email">Email</label>
+          <input
+            pInputText
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Nhập email"
+            formControlName="email"
+          />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="password">Mật khẩu</label>
+          <input
+            pInputText
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Nhập password"
+            formControlName="password"
+          />
+        </div>
+        <button class="text-sm self-end text-primary">Quên mật khẩu?</button>
+        <p-button type="submit" label="Đăng nhập" styleClass="w-full" />
+      </form>
+    </div>
+  </div>
+  <div class="basis-1/2 bg-blue-500"></div>
+</div>

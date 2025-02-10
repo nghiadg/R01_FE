@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-primary: #f8fafc;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  font-family: "Inter", sans-serif;
+}
