@@ -1,0 +1,62 @@
+<div class="h-full w-80 bg-white shadow-md flex flex-col">
+  <!-- toggle button -->
+
+  <div class="p-4 relative">
+    <img
+      src="assets/images/logo.png"
+      alt="logo"
+      width="auto"
+      height="50px"
+      class="h-[50px]"
+    />
+    <p-button
+      icon="pi pi-angle-left"
+      rounded
+      severity="secondary"
+      class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2"
+    />
+  </div>
+  <!-- menus -->
+  <div class="pr-3 mt-6 flex-1">
+    <p-menu [model]="menus" styleClass="!border-0 [&>ul]:p-0">
+      <ng-template #item let-item>
+        <a
+          routerLink="{{ item.routerLink }}"
+          routerLinkActive
+          #rla="routerLinkActive"
+          class="block"
+        >
+          <div class="py-3 pl-4" [class.active]="rla.isActive">
+            <i [class]="item.icon"></i>
+            <span class="ml-2">{{ item.label }}</span>
+          </div>
+        </a>
+      </ng-template>
+    </p-menu>
+  </div>
+  <!-- account -->
+  <div class="p-4 flex items-center justify-between">
+    <div class="flex items-center gap-1">
+      <p-avatar
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        class="mr-2"
+        size="large"
+        shape="circle"
+      />
+      <div>
+        <p class="font-bold">John Doe</p>
+        <p class="text-xs text-gray-500">Admin</p>
+      </div>
+    </div>
+    <div>
+      <p-menu #accountMenu [model]="accountMenus" [popup]="true" />
+      <p-button
+        icon="pi pi-ellipsis-v"
+        rounded
+        severity="secondary"
+        size="small"
+        (click)="accountMenu.toggle($event)"
+      />
+    </div>
+  </div>
+</div>
