@@ -1,0 +1,40 @@
+<app-content-panel heading="Danh sách chuyến đi">
+  <div class="flex-1 flex flex-col gap-4">
+    <div class="flex items-center justify-between">
+      <p-selectbutton [options]="tabOptions" />
+      <div class="flex items-center gap-4">
+        <p-button
+          label="Tạo chuyến đi"
+          icon="pi pi-plus"
+          (click)="onClickCreateTrip()"
+        />
+        <p-button
+          label="Lên lịch"
+          icon="pi pi-calendar-clock"
+          (click)="onClickScheduleTrip()"
+        />
+      </div>
+    </div>
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2 basis-1/3">
+        <p-inputgroup>
+          <input pInputText placeholder="Từ khóa tìm kiếm" />
+          <p-inputgroup-addon>
+            <p-button icon="pi pi-search" severity="secondary" variant="text" />
+          </p-inputgroup-addon>
+        </p-inputgroup>
+        <p-button label="Lọc" icon="pi pi-filter" severity="primary" />
+      </div>
+    </div>
+
+    <div class="flex-1">
+      <app-grid-table [columnDefs]="colDefs" />
+    </div>
+    <p-paginator
+      [first]="1"
+      [rows]="10"
+      [totalRecords]="120"
+      [rowsPerPageOptions]="[10, 20, 30]"
+    />
+  </div>
+</app-content-panel>

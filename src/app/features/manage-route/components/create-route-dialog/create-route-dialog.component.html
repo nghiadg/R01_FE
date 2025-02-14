@@ -1,0 +1,48 @@
+<form>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-1">
+      <label for="departure">Điểm xuất phát</label>
+      <input
+        pInputText
+        id="departure"
+        aria-describedby="username-help"
+        placeholder="Nhập điểm xuất phát"
+      />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="departure">Điểm đến</label>
+      <input
+        pInputText
+        id="departure"
+        aria-describedby="username-help"
+        placeholder="Nhập điểm đến"
+      />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="departure">Khoảng cách (km)</label>
+      <p-inputnumber placeholder="Nhập khoảng cách" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="departure">Thời gian dự kiến (giờ)</label>
+      <p-inputnumber
+        mode="decimal"
+        [minFractionDigits]="1"
+        [maxFractionDigits]="2"
+        placeholder="Nhập thời gian"
+      />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="departure">Giá vé tiêu chuẩn (đ)</label>
+      <p-inputnumber placeholder="Nhập giá vé" />
+    </div>
+    <div class="flex items-center justify-between gap-4">
+      <p-button
+        label="Hủy"
+        class="w-full"
+        styleClass="w-full"
+        severity="secondary"
+      />
+      <p-button label="Tạo" class="w-full" styleClass="w-full" />
+    </div>
+  </div>
+</form>

@@ -1,0 +1,58 @@
+<form>
+  <div class="flex flex-col gap-4">
+    <div class="flex gap-4">
+      <div class="flex flex-col gap-1 basis-1/2">
+        <label for="departure">Tên chuyến đi</label>
+        <input pInputText placeholder="Nhập tên chuyến đi" />
+      </div>
+      <div class="flex flex-col gap-1 basis-1/2">
+        <label for="departure">Tuyến đường</label>
+        <p-select
+          appendTo="body"
+          [options]="[]"
+          placeholder="Chọn tuyến đường"
+        />
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex flex-col gap-1 basis-1/2">
+        <label for="departure">Xe</label>
+        <p-select appendTo="body" [options]="[]" placeholder="Chọn xe" />
+      </div>
+      <div class="flex flex-col gap-1 basis-1/2">
+        <label for="departure">Thời gian khởi hành</label>
+        <p-datepicker
+          appendTo="body"
+          [showTime]="true"
+          showIcon
+          iconDisplay="input"
+          styleClass="w-full"
+          placeholder="Chọn thời gian khởi hành"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="departure">Tài xế phụ trách</label>
+      <p-select appendTo="body" [options]="[]" placeholder="Chọn tài xế" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="departure">Lơ xe phụ trách</label>
+      <p-select appendTo="body" [options]="[]" placeholder="Chọn lơ xe" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="departure">Giá vé tiêu chuẩn</label>
+      <p-inputnumber placeholder="Nhập giá vé" />
+    </div>
+    <div class="flex items-center justify-between gap-4">
+      <p-button
+        label="Hủy"
+        class="w-full"
+        styleClass="w-full"
+        severity="secondary"
+      />
+      <p-button label="Tạo" class="w-full" styleClass="w-full" />
+    </div>
+  </div>
+</form>
